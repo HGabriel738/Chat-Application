@@ -28,9 +28,9 @@ git clone https://github.com/HGabriel738/ChatApplication.git
 3. Open in Android Studio, sync Gradle, and run  
 
 ## Sample
-![Login](Images\Login.png)
-![Update Profile](Images\Update.png)
-![Chatroom](Images\Chatroom.png)
+![Login](Images/Login.png)
+![Update Profile](Images/Update.png)
+![Chatroom](Images/Chatroom.png)
 
 ## Project Structure
 - `activities/` - UI screens  
