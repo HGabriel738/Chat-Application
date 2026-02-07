@@ -1,0 +1,66 @@
+package com.example.letschat;
+
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import android.widget.ImageButton;
+
+import androidx.annotation.NonNull;
+
+import com.example.letschat.utils.FirebaseUtils;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.messaging.FirebaseMessaging;
+
+
+public class MainActivity extends BaseActivity {
+
+    BottomNavigationView bottomNavigationView;
+    ImageButton searchButton;
+
+    ChatFragment chatFragment;
+    ProfileFragment profileFragment;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        chatFragment=new ChatFragment();
+        profileFragment=new ProfileFragment();
+
+        bottomNavigationView=findViewById(R.id.bottom_navigation);
+        searchButton=findViewById(R.id.main_search_btn);
+
+        searchButton.setOnClickListener((v)->{
+            startActivity(new Intent(MainActivity.this,SearchUserActivity.class));
+        });
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                if(menuItem.getItemId()==R.id.menu_chat){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,chatFragment).commit();
+                }
+
+                if(menuItem.getItemId()==R.id.menu_profile){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout,profileFragment).commit();
+                }
+                return true;
+            }
+        });
+        bottomNavigationView.setSelectedItemId(R.id.menu_chat);
+        getFCMToken();
+    }
+
+    void getFCMToken(){
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                String token = task.getResult();
+                FirebaseUtils.currentUserDetail().update("fcmToken",token);
+            }
+        });
+    }
+}

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="20dp"
+    android:weightSum="100"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="STEP"
+        android:textColor="@color/red"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textAlignment="center">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="8">
+
+        <RelativeLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/circular_bg"
+            android:backgroundTint="@color/gray">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:layout_centerInParent="true"
+                android:textSize="18sp"
+                android:textColor="@color/white">
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/circular_bg"
+            android:backgroundTint="@color/darkgreen">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:layout_centerInParent="true"
+                android:textSize="18sp"
+                android:textColor="@color/white">
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/circular_bg"
+            android:backgroundTint="@color/blue">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:layout_centerInParent="true"
+                android:textSize="18sp"
+                android:textColor="@color/white">
+            </TextView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/chat_icon"
+        app:tint="@color/my_primary"
+        android:layout_weight="10">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login Page"
+        android:textAlignment="center"
+        android:letterSpacing="0.08"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_weight="5">
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="2">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Enter your email"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_rounded_corner"
+            android:elevation="5dp"
+            android:id="@+id/get_email" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="2">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Enter your password"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_rounded_corner"
+            android:elevation="5dp"
+            android:id="@+id/get_password" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="20"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/Login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded_corner"
+            android:text="LOGIN"/>
+
+        <ProgressBar
+            android:id="@+id/login_progress_bar"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:indeterminateTint="@color/blue"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:id="@+id/resend_otp_textview"
+        android:textSize="18sp"
+        android:textAlignment="center">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:id="@+id/sign_up_textview"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:clickable="true"
+        android:focusable="true" >
+    </TextView>
+
+</LinearLayout>
