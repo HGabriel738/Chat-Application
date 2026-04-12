@@ -2,7 +2,7 @@
 
 Let's Chat is a real-time Android messaging app built with Java and Firebase. Users can sign up, search for friends, and chat instantly with push notification support.
 
-## Features
+### Features
 - User authentication with Firebase Email/Password  
 - Real-time messaging using Firestore  
 - Search for users by username  
@@ -10,13 +10,13 @@ Let's Chat is a real-time Android messaging app built with Java and Firebase. Us
 - Push notifications for new messages  
 
 
-## Tech Stack
+### Tech Stack
 - Java  
 - Firebase Firestore, Auth, Storage  
 - Firebase Cloud Messaging (FCM)  
 - Glide, ImagePicker, Firebase UI  
 
-## Setup
+### Setup
 1. Clone the repository:  
 git clone https://github.com/HGabriel738/ChatApplication.git
 
@@ -27,12 +27,12 @@ git clone https://github.com/HGabriel738/ChatApplication.git
    - Enable Authentication, Firestore, and Storage  
 3. Open in Android Studio, sync Gradle, and run  
 
-## Sample
+### Sample
 ![Login](Images/Login.png)
 ![Update Profile](Images/Update.png)
 ![Chatroom](Images/Chatroom.png)
 
-## Project Structure
+### Project Structure
 - `activities/` - UI screens  
 - `adapters/` - RecyclerView adapters  
 - `model/` - Data models  
